@@ -1,0 +1,132 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+  color: white;
+}
+
+.logo {
+  font-size: 3rem;
+  font-weight: 600;
+  color: #fff;
+}
+
+nav#navbar {
+  height: 10%;
+  width: 70%;
+  font-size: 20px;
+  display: flex;
+  list-style: none;
+}
+
+nav#navbar a {
+  text-decoration: none;
+  margin: 10px;
+  color: rgb(255, 255, 255);
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+#nav-links li a::after {
+  content: '';
+  width: 0;
+  height: 3px;
+  background: #00c3ff;
+  position: absolute;
+  left: 0;
+  bottom: -8px;
+  transition: 0.5s;
+}
+
+#nav-links li a:hover::after {
+  width: 100%;
+}
+
+nav#navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: rgb(0, 0, 0);
+  backdrop-filter: blur(8px);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 40px;
+  z-index: 999;
+  transition: background-color 0.3s ease;
+}
+
+#nav-links {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+}
+
+#nav-links li a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  transition: color 0.3s ease, transform 0.2s ease;
+}
+
+#nav-links li a:hover {
+  color: #00c3ff74;
+  transform: scale(1.05);
+}
+
+.fas {
+  margin: 10px;
+  color: #cdc1c1;
+}
+
+#menu-toggle {
+  display: none;
+  font-size: 1.5rem;
+  color: #fff;
+  cursor: pointer;
+}
+
+.hero {
+  margin-top: 100px;
+  padding: 100px 20px;
+  text-align: center;
+}
+
+.extra-section {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+  color: #ccc;
+}
+
+@media (max-width: 768px) {
+  #nav-links {
+    position: absolute;
+    top: 70px;
+    right: 0;
+    flex-direction: column;
+    background: rgba(0, 0, 0, 0.9);
+    width: 200px;
+    display: none;
+    padding: 20px;
+  }
+
+  #nav-links.show {
+    display: flex;
+  }
+
+  #menu-toggle {
+    display: block;
+  }
+}
